@@ -1,0 +1,13 @@
+.app-component{
+    width: 80%;
+    min-height: 100vh;
+    margin: auto;
+
+    &__outlet{
+        height: 90vh;
+        background-color: azure;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+}

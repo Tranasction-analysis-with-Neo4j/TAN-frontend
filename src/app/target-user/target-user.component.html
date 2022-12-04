@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="container__find">
+        <h2>Find Possible Target User</h2>
+        <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>Select Product</ng-template>
+              <mat-form-field appearance="outline">
+                <mat-label>Available Product</mat-label>
+                <mat-select formControlName="firstCtrl">
+                  <mat-option *ngFor="let product of products" [value]="product.value">
+                    {{product.viewValue}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            <div>
+              <button mat-raised-button (click)="getUsers()" color="primary">Find</button>
+            </div>
+          </form>
+    </div>
+    <div class="container__result">
+        <h2>Result:</h2>
+        <div class="container__body">
+            <mat-card class="product-card" *ngFor="let product of targatedUser">
+                <!-- <mat-card class="product-card"> -->
+                <mat-card-title>{{product}}</mat-card-title>
+                <mat-card-actions>
+                  <button mat-button>Recommend Now</button>
+                </mat-card-actions>
+              </mat-card>
+        </div>
+    </div>
+</div>
